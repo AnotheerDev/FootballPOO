@@ -8,11 +8,11 @@ class ClubFoot
     private DateTime $dateCreation;
 
 
-    public function __construct(int $idClub, string $nom, DateTime $dateCreation)
+    public function __construct(int $idClub, string $nom, string $dateCreation)
     {
         $this->idClub = $idClub;
         $this->nom = $nom;
-        $this->dateCreation = $dateCreation;
+        $this->dateCreation = new DateTime($dateCreation);
     }
 
 
