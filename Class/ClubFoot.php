@@ -6,13 +6,15 @@ class ClubFoot
     private int $idClub;
     private string $nom;
     private DateTime $dateCreation;
+    private Pays $pays;
 
 
-    public function __construct(int $idClub, string $nom, string $dateCreation)
+    public function __construct(int $idClub, string $nom, string $dateCreation, Pays $pays)
     {
         $this->idClub = $idClub;
         $this->nom = $nom;
         $this->dateCreation = new DateTime($dateCreation);
+        $this->pays = $pays;
     }
 
 
@@ -50,5 +52,17 @@ class ClubFoot
     public function setDateCreation($dateCreation)
     {
         $this->dateCreation = $dateCreation;
+    }
+
+
+    public function getPays()
+    {
+        return $this->pays;
+    }
+
+
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
     }
 }
