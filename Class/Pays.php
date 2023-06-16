@@ -2,7 +2,7 @@
 
 class Pays
 {
-//Attributs:
+    //Attributs:
     private int $idPays;
     private string $nom;
 
@@ -14,7 +14,7 @@ class Pays
     }
 
 
-// getter et setter pour chaque attribut de ma class :
+    // getter et setter pour chaque attribut de ma class :
     public function getIdPays()
     {
         return $this->idPays;
@@ -30,5 +30,11 @@ class Pays
     public function setNom($nom)
     {
         $this->nom = $nom;
+    }
+
+
+    public function setIdPays($idPays)
+    {
+        $this->idPays = $idPays;
     }
 }
