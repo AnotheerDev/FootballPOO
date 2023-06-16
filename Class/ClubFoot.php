@@ -7,6 +7,7 @@ class ClubFoot
     private string $nom;
     private DateTime $dateCreation;
     private Pays $pays;
+    private array $contrats;
 
 
     public function __construct(int $idClub, string $nom, string $dateCreation, Pays $pays)
@@ -15,6 +16,7 @@ class ClubFoot
         $this->nom = $nom;
         $this->dateCreation = new DateTime($dateCreation);
         $this->pays = $pays;
+        $this->contrats = [];
     }
 
 

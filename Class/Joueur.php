@@ -8,6 +8,7 @@ class Joueur
     private string $prenom;
     private DateTime $dateNaissance;
     private Pays $pays;
+    private array $contrats;
 
 
     public function __construct(int $idJoueur, string $nom, string $prenom, string $dateNaissance, Pays $pays)
@@ -17,6 +18,7 @@ class Joueur
         $this->prenom = $prenom;
         $this->dateNaissance = new DateTime($dateNaissance);
         $this->pays = $pays;
+        $this->contrats = [];
     }
 
 
