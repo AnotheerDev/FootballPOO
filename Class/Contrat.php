@@ -15,6 +15,9 @@ class Contrat
         $this->joueur = $joueur;
         $this->idContrat = $idContrat;
         $this->dateContrat = new DateTime($dateContrat);
+
+        $this->clubFoot->ajouterContrat($this);
+        $this->joueur->ajouterContrat($this);
     }
 
 
