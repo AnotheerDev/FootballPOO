@@ -60,7 +60,7 @@ class Joueur
 
     public function getDateNaissance()
     {
-        return $this->dateNaissance;
+        return $this->dateNaissance->format('d-m-Y');
     }
 
 

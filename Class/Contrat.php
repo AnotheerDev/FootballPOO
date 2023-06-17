@@ -57,7 +57,7 @@ class Contrat
 
     public function getDateContrat()
     {
-        return $this->dateContrat;
+        return $this->dateContrat->format('d-m-Y');
     }
 
 
