@@ -27,7 +27,7 @@ $italie = new Pays("4", "Italie");
 // objet : ClubFoot
 $psg = new ClubFoot("1", "PSG", "12-06-1978", $france);
 $rcs = new ClubFoot("2", "Racing Club Strasbourg", "22-12-1999", $france);
-$fcBarcelone = new ClubFoot("3", "FC Barcelon", "05-08-1958", $espagne);
+$fcBarcelone = new ClubFoot("3", "FC Barcelone", "05-08-1958", $espagne);
 $juventus = new ClubFoot("4", "Juventus", "30-10-1966", $italie);
 $manchesterUnited = new ClubFoot("4", "Manchester United", "10-11-1955", $angleterre);
 
@@ -47,3 +47,40 @@ $contrat5 = new Contrat($fcBarcelone, $cristianoRonaldo, "5", "10-01-2021");
 $contrat6 = new Contrat($juventus, $cristianoRonaldo, "6", "10-01-2021");
 $contrat7 = new Contrat($manchesterUnited, $cristianoRonaldo, "7", "10-01-2021");
 $contrat8 = new Contrat($psg, $killianMbappe, "8", "18-11-2017");
+
+
+
+// Affichage des résultats
+echo "Lister toutes les équipes d'un pays :<br>";
+$equipesFrance = $france->getEquipesDuPays();
+foreach ($equipesFrance as $equipe) {
+    echo $equipe->getNom() . "<br>";
+}
+echo "------------------------------------------------<br>";
+
+echo "Lister tous les joueurs d'une équipe :<br>";
+$joueursPSG = $psg->getJoueursDuClub();
+foreach ($joueursPSG as $joueur) {
+    echo $joueur->getNom() . ' ' . $joueur->getPrenom() . '<br>';
+}
+
+echo "------------------------------------------------<br>";
+
+echo "Lister toutes les équipes d'un joueur :<br>";
+// Récupérer tous les contrats d'un joueur
+$contratsJoueur = $lionelMessi->getContratJoueur();
+
+// Initialiser un tableau pour stocker les noms des équipes
+$equipes = [];
+
+// Itérer sur les contrats et obtenir les équipes associées
+foreach ($contratsJoueur as $contrat) {
+    $equipe = $contrat->getclubFoot();
+    $equipes[] = $equipe->getNom();
+}
+
+// Afficher les noms des équipes
+echo "Équipes de Lionel Messi :<br>";
+foreach ($equipes as $equipe) {
+    echo $equipe . "<br>";
+}
