@@ -10,13 +10,14 @@ class ClubFoot
     private array $contrats;
 
 
-    public function __construct(int $idClub, string $nom, string $dateCreation, Pays $pays)
+    public function __construct(int $idClub, string $nom, string $dateCreation, Pays $pays )
     {
         $this->idClub = $idClub;
         $this->nom = $nom;
         $this->dateCreation = new DateTime($dateCreation);
         $this->pays = $pays;
         $this->contrats = [];
+        $pays->ajouterClubFoot($this);
     }
 
 
@@ -72,5 +73,23 @@ class ClubFoot
     public function __toString()
     {
         return $this->nom;
+    }
+
+
+    public function ajouterContrat(Contrat $contrat)
+    {
+        $this->contrats[] = $contrat;
+    }
+
+
+    public function getJoueursDuClub()
+    {
+        $contrats = [];
+
+        foreach ($this->contrats as $contrat) {
+            $contrats[] = $contrat->getJoueur();
+        }
+
+        return $contrats;
     }
 }

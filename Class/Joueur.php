@@ -86,4 +86,23 @@ class Joueur
     {
         return $this->prenom . $this->nom;
     }
+
+
+    public function ajouterContrat(Contrat $contrat)
+    {
+        $this->contrats[] = $contrat;
+    }
+
+
+    public function getContratJoueur()
+    {
+        $contrats = [];
+
+        foreach ($this->contrats as $contrat) {
+            $contrats[] = $contrat;
+        }
+
+        return $contrats;
+    }
 }
+

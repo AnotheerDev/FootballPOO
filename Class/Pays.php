@@ -46,5 +46,21 @@ class Pays
         return $this->nom;
     }
 
-    
+
+    public function ajouterClubFoot(ClubFoot $clubFoot)
+    {
+        $this->clubFoots[] = $clubFoot;
+    }
+
+
+    public function getEquipesDuPays()
+    {
+        $equipes = [];
+
+        foreach ($this->clubFoots as $club) {
+            $equipes[] = $club;
+        }
+
+        return $equipes;
+    }
 }
