@@ -5,12 +5,14 @@ class Pays
     //Attributs:
     private int $idPays;
     private string $nom;
+    private array $clubFoots;
 
 
     public function __construct(int $idPays, string $nom)
     {
         $this->idPays = $idPays;
         $this->nom = $nom;
+        $this->clubFoots = [];
     }
 
 
@@ -37,4 +39,12 @@ class Pays
     {
         $this->idPays = $idPays;
     }
+
+
+    public function __toString()
+    {
+        return $this->nom;
+    }
+
+    
 }

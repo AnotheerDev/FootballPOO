@@ -80,4 +80,10 @@ class Joueur
     {
         $this->pays = $pays;
     }
+
+
+    public function __toString()
+    {
+        return $this->prenom . $this->nom;
+    }
 }

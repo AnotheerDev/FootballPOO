@@ -65,4 +65,10 @@ class Contrat
     {
         $this->dateContrat = $dateContrat;
     }
+
+
+    public function __toString()
+    {
+        return $this->clubFoot . $this->joueur;
+    }
 }
